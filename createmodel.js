@@ -9,7 +9,7 @@ const sequelize = new Sequelize('testdb2','alien',process.env.password,{
     dialect: 'mysql'
 });
 
-const Student = sequelize.define('student', {
+const Student = sequelize.define('students', {
     name: {
         type: DataTypes.STRING(30),
         allowNull: false
@@ -24,6 +24,13 @@ const Student = sequelize.define('student', {
     }
 });
 
-sequelize.sync({alter: true})
+
+
+sequelize.sync()
 .then(() => console.log('Database Synchronized'))
 .catch(console.error)
+
+exports = module.exports = {
+    sequelize,
+    Student
+}
