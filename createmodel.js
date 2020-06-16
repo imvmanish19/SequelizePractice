@@ -1,6 +1,7 @@
 const dotenv = require('dotenv').config();
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
+const Op = Sequelize.Op;
 
 //console.log(DataTypes)
 
@@ -32,5 +33,7 @@ sequelize.sync()
 
 exports = module.exports = {
     sequelize,
-    Student
+    Student,
+    Op,
+    DataTypes
 }
